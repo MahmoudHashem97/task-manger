@@ -38,7 +38,7 @@ router.post('/users',async(req,res)=>{
             return tokenFiltered.token!==  req.token//-> come from auth        
         })
         await req.user.save()
-        res.send()
+        res.status(200).send()
     }catch(e){
         res.status(500).send() 
     }
@@ -48,7 +48,7 @@ router.post('/users',async(req,res)=>{
     try{
         req.user.tokens=[]
         await req.user.save()
-        res.send()
+        res.status(200).send()
     }catch(e){
         res.status(500).send() 
     }
